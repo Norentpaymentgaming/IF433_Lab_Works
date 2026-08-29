@@ -1,9 +1,15 @@
 package oop_00000164306_VincentImmanuel.week01 // Make sure the package is in accordance
 
+// Tulis DI LUAR main()
+fun calculateStatus(score: Int): if (score > 75) "Lulus" else "Tidak Lulus"
+
 fun main() {
     // Refactor: Gunakan val dan hapus tipe data eksplisit
     val name = "John Thor"
     val score = 80
+
+    // Panggil DI DALAM main()
+    println("Status: ${calculateStatus(score)}")
 
     // Refactor: String Template ($name)
     println("Nama: $name, Nilai: $score")
@@ -14,8 +20,8 @@ fun main() {
         in 80..89 -> "B"
         in 70..79 -> "C"
         else -> "D"
+
     }
 
     println("Grade kamu: $grade")
 }
-
