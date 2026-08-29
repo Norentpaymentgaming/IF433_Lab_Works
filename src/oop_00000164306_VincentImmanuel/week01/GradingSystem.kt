@@ -1,7 +1,7 @@
 package oop_00000164306_VincentImmanuel.week01 // Make sure the package is in accordance
 
 // Tulis DI LUAR main()
-fun calculateStatus(score: Int): if (score > 75) "Lulus" else "Tidak Lulus"
+fun calculateStatus(score: Int) = if (score > 75) "Lulus" else "Tidak Lulus"
 
 fun main() {
     // Refactor: Gunakan val dan hapus tipe data eksplisit
@@ -24,4 +24,12 @@ fun main() {
     }
 
     println("Grade kamu: $grade")
+
+    // Tambahkan di akhir main()
+    val studentId: String? = null
+
+    // Jika null, gunakan nilai default 0
+    val idLength = studentId?.length ?: 0
+
+    println("Panjang ID: $idLength")
 }
