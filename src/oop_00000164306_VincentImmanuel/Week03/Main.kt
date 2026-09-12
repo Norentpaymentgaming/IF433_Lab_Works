@@ -1,13 +1,13 @@
 package oop_00000164306_VincentImmanuel.week03
 
 fun main() {
-    val w = Weapon("Sword of Doom")
+    val player = Player("Alex")
 
-    w.damage = -50 // harus gagal (warning, nilai tetap)
-    println("Damage setelah percobaan negatif: ${w.damage}")
+    // player.xp // Coba uncomment, harus Error (private)
 
-    w.damage = 9999 // harus jadi 1000
-    println("Damage setelah 9999: ${w.damage}")
+    player.addXp(50) // masih level 1
+    println("Level saat ini: ${player.level}")
 
-    println("Tier: ${w.tier}")
+    player.addXp(60) // total 110, harus Level Up ke 2
+    println("Level saat ini: ${player.level}")
 }
