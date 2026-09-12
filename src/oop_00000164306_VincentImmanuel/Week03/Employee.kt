@@ -1,11 +1,11 @@
-package oop_00000164306_VincentImmanuel.Week03
+package oop_00000164306_VincentImmanuel.week03
 
 class Employee(val name: String) {
     var salary: Int = 0
         set(value) {
             if (value < 0) {
                 println("ERROR: Gaji tidak boleh negatif! Di-set ke 0.")
-                field = 0 // Gunakan field, bukan this.salary
+                field = 0
             } else {
                 field = value
             }
@@ -17,7 +17,7 @@ class Employee(val name: String) {
         println("Kinerja $name meningkat! Rating: $performanceRating")
     }
     fun printStatus() {
-        println("$name, Rating: $performanceRating")
+        println("Karyawan: $name, Rating: $performanceRating")
     }
     val tax: Double
         get() = salary * 0.1
