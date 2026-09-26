@@ -28,4 +28,13 @@ fun main() {
     println(mathHelper.hitungLuas(5))
     println(mathHelper.hitungLuas(4, 6))
     println(mathHelper.hitungLuas(7.0))
+
+    val eWallet = EWallet("Budi", 50000.0)
+    val creditCard = CreditCard("Ani", 100000.0)
+
+    val daftarPembayaran: List<PaymentMethod> = listOf(eWallet, creditCard)
+
+    for (pembayaran in daftarPembayaran) {
+        pembayaran.processPayment(75000.0)
+    }
 }
