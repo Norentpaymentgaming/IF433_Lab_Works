@@ -35,5 +35,10 @@ fun main() {
         is ApiResponse.Error -> "Munculkan alert: ${response.message}"
         is ApiResponse.Loading -> "Tampilkan Spinner"
     }
+
+    println("\n=== TEST GAME MANAGER SINGLETON ===")
+    GameManager.startGame()
+    GameManager.startGame()
+
     println(uiMessage)
 }
