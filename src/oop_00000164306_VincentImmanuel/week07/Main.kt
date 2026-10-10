@@ -35,6 +35,7 @@ fun main() {
         is ApiResponse.Error -> "Munculkan alert: ${response.message}"
         is ApiResponse.Loading -> "Tampilkan Spinner"
     }
+    println(uiMessage)
 
     println("\n=== TEST GAME MANAGER SINGLETON ===")
     GameManager.startGame()
@@ -45,5 +46,11 @@ fun main() {
     val starterSword = Weapon.forgeStarterSword()
     println("Starter sword: ${starterSword.item.name}, damage: ${starterSword.item.damage}, durability: ${starterSword.durability}")
 
-    println(uiMessage)
+    println("\n=== TEST ITEM COPY AND BATTLE EVENTS ===")
+    val upgradedItem = starterSword.item.copy(damage = 25)
+
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedItem))
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
 }
