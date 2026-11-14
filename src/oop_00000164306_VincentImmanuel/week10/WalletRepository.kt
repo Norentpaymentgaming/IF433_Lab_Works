@@ -11,3 +11,7 @@ class WalletRepository<T> {
         return items
     }
 }
+
+fun <T : Named> WalletRepository<T>.search(keyword: String): List<T> {
+    return getAll().filter { it.name.contains(keyword, ignoreCase = true) }
+}
